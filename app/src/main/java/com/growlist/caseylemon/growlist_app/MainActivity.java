@@ -3,6 +3,7 @@ package com.growlist.caseylemon.growlist_app;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.arch.persistence.room.Room;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
     TextView tv = (TextView) findViewById(R.id.sample_text);
     tv.setText(stringFromJNI());
     }
+
+    GrowlistDatabase db = Room.databaseBuilder(getApplicationContext(),
+            GrowlistDatabase.class, "plants").build();
+
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
