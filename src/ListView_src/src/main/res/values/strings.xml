@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Growlist</string>
+	<string name="addItemButton">Add</string>
+    <string name="plantNameField">Species</string>
+    <string name="description">Description</string>
+</resources>
