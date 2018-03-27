@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="filterOptions">
+        <item></item>
+        <item>Name</item>
+        <item>Classification1</item>
+        <item>Classification2</item>
+    </string-array>
+</resources>
