@@ -16,6 +16,7 @@ Intro
 ### Overview
 Our project has mostly stayed true to the proposal, omitting a few minor changes.
 
+
 Customer Value
 ==============
 No major changes were made from the original project proposal.
@@ -50,15 +51,19 @@ Continuing forward with our project, we will stick with this format of each team
 Project Management
 ==================
 ### Product on Schedule?:
+Project is on schedule
 
 ### Updates to schedule:
+In our original project proposal, we were projecting for possible iOS implementation of the app. However, this will most likely not be completed before the project deadline.
 
 
 Reflections
 ===========
 ### What went well?
+Our team structure has actually been fairly successful. With each member acting as a project member, we are all contributing to programming, managing, and reaching deadlines. The software aspect has been able to stay on track and we're completing each milestone to our we originally projected it, with minor changes.
 
 ### What didn't go well?
+Although the team structure was been successful, we haven't utilized creating issues for each change to the project we make. This isn't too bad, but it does make the project easier to manage when all issues are in a single place in the project repo.
 
 ### What will be done differently in next iteration?
-
+We will try to utilize creating specific issues for the various code changes we make. Doing this will allow for viewing changes to the project more easily and see what is being worked on.
