@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.File;
+
 import com.example.awilk.growlist2.PlantDBHelper;
 import com.example.awilk.growlist2.Plant;
 
@@ -58,7 +60,12 @@ public class UpdateRecordActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //call the save plant method
-                updatePlant();
+                if(updatePlant() == true)
+                {
+                    //finally redirect back home
+                    // NOTE you can implement an sqlite callback then redirect on success delete
+                    goBackHome();
+                }
             }
         });
 
@@ -68,7 +75,7 @@ public class UpdateRecordActivity extends AppCompatActivity {
 
     }
 
-    private void updatePlant(){
+    private boolean updatePlant(){
         String name = mNameEditText.getText().toString().trim();
         String age = mClassification1EditText.getText().toString().trim();
         String occupation = mClassification2EditText.getText().toString().trim();
@@ -78,33 +85,41 @@ public class UpdateRecordActivity extends AppCompatActivity {
         if(name.isEmpty()){
             //error name is empty
             Toast.makeText(this, "You must enter a name", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
         if(age.isEmpty()){
             //error name is empty
             Toast.makeText(this, "You must enter an age", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
         if(occupation.isEmpty()){
             //error name is empty
             Toast.makeText(this, "You must enter an occupation", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
         if(image.isEmpty()){
             //error name is empty
             Toast.makeText(this, "You must enter an image link", Toast.LENGTH_SHORT).show();
+            return false;
         }
+        //check if the file exists (and is valid) before saving the plant (prevents crash from trying to load a nonexistent file)
+        /*
+        File picFile = new File(image);
+        if(!(picFile.exists())){
+            Toast.makeText(this, "Image link does not exist", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        */
 
         //create updated plant
         Plant updatedPlant = new Plant(name, age, occupation, image);
 
         //call dbhelper update
         dbHelper.updatePlantRecord(receivedPlantId, this, updatedPlant);
-
-        //finally redirect back home
-        // NOTE you can implement an sqlite callback then redirect on success delete
-        goBackHome();
-
+        return true;
     }
 
     private void goBackHome(){
