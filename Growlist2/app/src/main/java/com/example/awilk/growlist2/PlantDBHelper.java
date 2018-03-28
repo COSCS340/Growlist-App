@@ -132,7 +132,7 @@ public class PlantDBHelper extends SQLiteOpenHelper {
     public void updatePlantRecord(long plantId, Context context, Plant updatedplant) {
         SQLiteDatabase db = this.getWritableDatabase();
         //you can use the constants above instead of typing the column names
-        db.execSQL("UPDATE  "+TABLE_NAME+" SET name ='"+ updatedplant.getName() + "', age ='" + updatedplant.getClassification1()+ "', classification2 ='"+ updatedplant.getClassification2() + "', image ='"+ updatedplant.getImage() + "'  WHERE _id='" + plantId + "'");
+        db.execSQL("UPDATE  "+TABLE_NAME+" SET name ='"+ updatedplant.getName() + "', classification1 ='" + updatedplant.getClassification1()+ "', classification2 ='"+ updatedplant.getClassification2() + "', image ='"+ updatedplant.getImage() + "'  WHERE _id='" + plantId + "'");
         Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
 
 
