@@ -38,46 +38,54 @@ public class AddRecordActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //call the save plant method
-                savePlant();
+                if(savePlant() == true){
+                    //finally redirect back home
+                    // NOTE you can implement an sqlite callback then redirect on success delete
+                    goBackHome();
+                }
+
             }
         });
 
     }
 
-    private void savePlant(){
+    private boolean savePlant(){
         String name = mNameEditText.getText().toString().trim();
         String classification1 = mClassification1EditText.getText().toString().trim();
         String classification2 = mClassification2EditText.getText().toString().trim();
         String image = mImageEditText.getText().toString().trim();
-        dbHelper = new PlantDBHelper(this);
+
 
         if(name.isEmpty()){
             //error name is empty
             Toast.makeText(this, "You must enter a name", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
         if(classification1.isEmpty()){
             //error name is empty
             Toast.makeText(this, "You must enter an classification1", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
         if(classification2.isEmpty()){
             //error name is empty
             Toast.makeText(this, "You must enter an classification2", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
         if(image.isEmpty()){
             //error name is empty
             Toast.makeText(this, "You must enter an image link", Toast.LENGTH_SHORT).show();
+            return false;
         }
 
         //create new plant
+        dbHelper = new PlantDBHelper(this);
         Plant plant = new Plant(name, classification1, classification2, image);
         dbHelper.saveNewPlant(plant);
 
-        //finally redirect back home
-        // NOTE you can implement an sqlite callback then redirect on success delete
-        goBackHome();
+        return true;
 
     }
 
