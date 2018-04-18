@@ -43,6 +43,7 @@ public class UpdateRecordActivity extends AppCompatActivity {
     private PlantDBHelper dbHelper;
     private long receivedPlantId;
     String mCurrentPhotoPath = null;
+    String mNotes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,7 @@ public class UpdateRecordActivity extends AppCompatActivity {
         mGenusEditText.setText(queriedPlant.getGenus());
         mSpeciesEditText.setText(queriedPlant.getSpecies());
         mQuantityEditText.setText(queriedPlant.getQuantity());
+        mNotes = queriedPlant.getNotes();
         //mImageEditText.setText(queriedPlant.getImage());
         int orientation = 0;
         mCurrentPhotoPath = queriedPlant.getImage();
@@ -302,7 +304,7 @@ public class UpdateRecordActivity extends AppCompatActivity {
         String Genus = mGenusEditText.getText().toString().trim();
         String Species = mSpeciesEditText.getText().toString().trim();
         String Quantity = mQuantityEditText.getText().toString().trim();
-        String Notes = "";
+        String Notes = mNotes;
         String image = "";
         if (mCurrentPhotoPath != null) {
             image = mCurrentPhotoPath.trim();
@@ -330,7 +332,7 @@ public class UpdateRecordActivity extends AppCompatActivity {
         }
 
         //create updated plant
-        Plant updatedPlant = new Plant(Genus, Species, Quantity, image, Notes);
+        Plant updatedPlant = new Plant(Genus, Species, Quantity, Notes, image);
 
         //call dbhelper update
         dbHelper.updatePlantRecord(receivedPlantId, this, updatedPlant);

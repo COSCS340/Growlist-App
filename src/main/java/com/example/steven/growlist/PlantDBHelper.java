@@ -5,9 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.sql.PreparedStatement;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -137,7 +139,11 @@ public class PlantDBHelper extends SQLiteOpenHelper {
     public void updatePlantRecord(long plantId, Context context, Plant updatedplant) {
         SQLiteDatabase db = this.getWritableDatabase();
         //you can use the constants above instead of typing the column names
-        db.execSQL("UPDATE  "+TABLE_NAME+" SET Genus ='"+ updatedplant.getGenus() + "', Species ='" + updatedplant.getSpecies()+ "', Quantity ='"+ updatedplant.getQuantity() + "', COLUMN_PLANT_NOTES ='"+ updatedplant.getNotes() + "', image ='"+ updatedplant.getImage() + "'  WHERE _id='" + plantId + "'");
+        //May want to parametrize the whole statement to prevent crashes
+        SQLiteStatement updateStatement = db.compileStatement("UPDATE  "+TABLE_NAME+" SET Genus ='"+ updatedplant.getGenus() + "', Species ='" + updatedplant.getSpecies()+ "', Quantity ='"+ updatedplant.getQuantity() +
+                "', Notes =?, image ='" + updatedplant.getImage() + "'  WHERE _id='" + plantId + "'");
+        updateStatement.bindString(1, updatedplant.getNotes());
+        updateStatement.execute();
         Toast.makeText(context, "Updated successfully.", Toast.LENGTH_SHORT).show();
 
 
