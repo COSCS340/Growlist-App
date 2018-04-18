@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.awilk.growlist2.AddRecordActivity">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="Add new plant"
+            android:textAlignment="center"></TextView>
+
+        <EditText
+            android:id="@+id/userGenus"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:ems="10"
+            android:hint="Genus"
+            android:inputType="textCapWords" />
+
+        <EditText
+            android:id="@+id/userSpecies"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:ems="10"
+            android:hint="Species"
+            android:inputType="text" />
+        
+        <EditText
+            android:id = "@+id/userNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint = "Notes"
+            android:inputType="textCapSentences|textMultiLine"/>
+        <EditText
+            android:id="@+id/userQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:ems="10"
+            android:hint="Quantity"
+            android:inputType="number" />
+<!--
+        <EditText
+            android:id="@+id/userProfileImageLink"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:ems="10"
+            android:hint="Image profile url"
+            android:inputType="textUri" />
+-->
+        <Button
+            android:id="@+id/UserOpenGallery"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/open_gal"/>
+        <Button
+            android:id="@+id/UserCameraButton"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/new_pic" />
+
+
+        <Button
+            android:id="@+id/addNewUserButton"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/save_new"></Button>
+
+        <ImageView
+            android:id="@+id/imagePreview"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            />
+
+    </LinearLayout>
+</ScrollView>

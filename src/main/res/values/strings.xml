@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Growlist!</string>
+    <string name="open_gal">Select Picture from Gallery</string>
+    <string name="new_pic">Take New Picture</string>
+    <string name="save_new">Save New Plant</string>
+    <string name="detail_view">Detail View</string>
+</resources>

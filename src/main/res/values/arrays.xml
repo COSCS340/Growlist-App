@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="filterOptions">
+        <item>Genus</item>
+        <item>Species</item>
+        <item>Quantity</item>
+    </string-array>
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android = "http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.example.awilk.growlist2.AddRecordActivity">
+
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="@string/detail_view"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/UserGenus"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:text="Genus:"
+            android:ems="10" />
+
+        <TextView
+            android:id="@+id/UserSpecies"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:ems="10"/>
+
+        <TextView
+            android:id="@+id/UserQuantity"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:ems="10" />
+        <TextView
+            android:id="@+id/UserNotes"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:ems="10"/>
+
+
+
+        <ImageView
+            android:id="@+id/imagePreview"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:scaleType="fitXY"
+            android:adjustViewBounds="true"
+            />
+
+    </LinearLayout>
+</ScrollView>
