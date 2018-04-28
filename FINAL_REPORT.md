@@ -36,6 +36,8 @@ Technology
 **What works and doesn't work**
 After our core system was finished, we began adding more features that we originally planned for while also fixing some bugs. One of our bigger, most hindering bug was a slow down in performance when a user's list got to big, so we needed to fix this before adding other features. After the fix, we began developing features like updating/deleting of entries and more image capabilities.
 
+![](ReportImages/demo1.jpg)
+
 ### Tests Ran
 While a majority of our team do not have a physical android environment to run our app on, we all would regularly test our app on the Android Emulator built into Android Studio. Running tests on the emulator allowed for quick feedback on various changes to the UI or app functionality. When we had a more stable or more updated version of our app ready, the group member with an Android device would load the app onto their device to test it in a real-world environment.
 
