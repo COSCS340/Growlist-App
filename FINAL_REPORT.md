@@ -1,28 +1,25 @@
-# Growlist-App -- Steven Engel, Alex Wilkinson, Brandon Yen, Casey Lemon
+# Growlist, an app for tracking your collection of plants!
+**Team name: Growlist-App**
+**Team Members: Steven Engel, Alex Wilkinson, Brandon Yen, Casey Lemon**
 
 Introduction
 =====
-### Project Intro
-Create an app that allows the user to add, view, update, and share their collection of plants.
+### What it is?
+An Android app to track a user's collection of plants along with info related to each individual plant, such as pictures and notes
 
 ### Motivation
-A group member has a hobby of collecting plants and realized there were no apps available that would make this process easier, beside the bloated use of Excel.
+A group member has a hobby of collecting plants and realized there were no apps available that would make this process easier. So, being able to develop an app for tracking and managing large collections of plants for enthusiasts would solve this problem.
 
 ### Our Approach
-1. Created displaying of single plants
+1. Build core functions of apps to have a minimal functioning app
 
-	We created a UI to just display a single plant entry and basic information about it. This was used as a UI test to see what we wanted the app to look like.
+2. Add individual features
+	- **Created displaying of single plants**: We created a UI to just display a single plant entry and basic information about it. This was used as a UI test to see what we wanted the app to look like.
+	- **Created list viewing of plants**: We then enabled viewing of multiple plant entries for the user.
+	- **Rudimentary data storage options**: Since the core of the app is supposed to store all of the user's plant entries, we needed to create a basic version of a storage system. This was done using Android's Room database (more about in Technology section).
 
-2. Created list viewing of plants
-
-	We then enabled viewing of multiple plant entries for the user.
-
-3. Rudimentary data storage options
-
-	Since the core of the app is supposed to store all of the user's plant entries, we needed to create a basic version of a storage system. This was done using Android's Room database (more about in Technology section).
-
-### Interruptions
-Some features we were not able to get to due to time constraints, the most notable one would be a cloud sharing feature.
+### Conclusions
+Because of our approach, we were capable of finishing a majority of the features we orginally planned for. Building our core app, or our app at its most basic version, allowed for us to focus on finishing that quickly then moving onto our more notable features.
 
 Customer Value
 ==============
@@ -30,46 +27,41 @@ No major changes were made from the original project proposal.
 
 Technology
 ==========
-### Architecture
-Since our main focus is building an Android application, we are utilizing Android's SDK to build a majority of our app. The main components of our app, like the GUI, the storage, and the user experience, all use various parts of the SDK. For example, for storing our information we originally were looking to use a MySQL or LiteSQL. However, Android has it's own database interface called Room, which although is basically a wrapper for LiteSQL, it makes storing user data much easier.
+### Changes from status report
+**Goals After Minimum Viable System**:
+- Fix bugs
+- Add updating/deleting of entries from list
+- Add image capabilities (From gallery or new picture from camera)
 
-### Iteration's Goals
-Our goal for this iteration was to simply have a UI and be able to display multiple plants and add plants to the display. With the screenshot below, you can see we have a simple layout with the option of being able to add another plant to display information about.
-
-INSERT SCREENSHOT HERE
+**What works and doesn't work**
+After our core system was finished, we began adding more features that we originally planned for while also fixing some bugs. One of our bigger, most hindering bug was a slow down in performance when a user's list got to big, so we needed to fix this before adding other features. After the fix, we began developing features like updating/deleting of entries and more image capabilities.
 
 ### Tests Ran
 While a majority of our team do not have a physical android environment to run our app on, we all would regularly test our app on the Android Emulator built into Android Studio. Running tests on the emulator allowed for quick feedback on various changes to the UI or app functionality. When we had a more stable or more updated version of our app ready, the group member with an Android device would load the app onto their device to test it in a real-world environment.
 
-### Future Iteration's Goals
-Moving forward, our goal is to be able to store, load, create/delete plant entries from the user. Once we get this goal completed, we will have the core functionality of our app finish. Then we will be able to move onto other future goals listed in the proposal, like sharing between users.
+Also, one of our group members, Steven, asked some hobbyists/enthusiasts in the community to alpha test our app. This allowed for more people with actual android devices to test it and more people than we could've originally planned for too.
 
+### Results of Tests
+Within our group, we were able to find quick bugs when developing, however our major bugs were discovered when we were able to get more alpha testers. One of the major bugs discovered was the slowed performance when a list got too big.
 
 Team
 ====
 ### Team Member's Roles
-Since there is not designated project manager for our team, we have all been contributing like a project manager. This mostly means that if a team member saw something needing to be fixed, then an issue was created and assigned to themselves or the person who could most likely finish it, and was then worked on. This role for each team member, although unorthodox, has been effective with getting issues completed and having each team member contribute.
-
-### Moving Forward
-Continuing forward with our project, we will stick with this format of each team member acting as a pseudo project manager.
-
+Since there is no designated project manager for our team, we have all been contributing like a project manager. This mostly means that if a team member saw something needing to be fixed, then an issue was created and assigned to themselves or the person who could most likely finish it, and was then worked on. This role for each team member, although unorthodox, has been effective with getting issues completed and having each team member contribute.
 
 Project Management
 ==================
-### Product on Schedule?:
-Project is on schedule
-
 ### Updates to schedule:
-In our original project proposal, we were projecting for possible iOS implementation of the app. However, this will most likely not be completed before the project deadline.
+In our original project proposal, we were projecting for a possible iOS implementation of the app. However, this was not able to be implemented as developing an Android app brought along enough challenges for the four of us within the allotted time frame of this semester. Feature-wise, we were wanting to add a sharing functionality for our app, whether it be to a cloud service or saving it to the device. However, we were unable to finish this in time, but could very easily finish this in future releases.
 
 
 Reflections
 ===========
 ### What went well?
-Our team structure has actually been fairly successful. With each member acting as a project member, we are all contributing to programming, managing, and reaching deadlines. The software aspect has been able to stay on track and we're completing each milestone to our we originally projected it, with minor changes.
+Our team structure has actually been fairly successful. With each member acting as a project manager, we are all contributing to programming, managing, and reaching deadlines. The software aspect has been able to stay on track and we're completing each milestone to our we originally projected it, with minor changes.
 
 ### What didn't go well?
-Although the team structure was been successful, we haven't utilized creating issues for each change to the project we make. This isn't too bad, but it does make the project easier to manage when all issues are in a single place in the project repo.
+Although the team structure was fairly successful, we haven't utilized creating issues for each change to the project we make. This isn't too bad, but it does make the project easier to manage when all issues are in a single place in the project repo.
 
-### What will be done differently in next iteration?
-We will try to utilize creating specific issues for the various code changes we make. Doing this will allow for viewing changes to the project more easily and see what is being worked on.
+### Was it a success?
+We all agreed that this project was actually successful. We got through nearly all of what we planned for and the parts we didn't get to could easily be implemented in later versions. As a team, we were all able to work together and communicate easily which allowed for a very smooth development process.
